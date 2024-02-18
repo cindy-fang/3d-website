@@ -1,5 +1,5 @@
 {
-  "name": "vite-project",
+  "name": "boolingo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
     "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.97.5",
+    "@react-three/drei": "^9.97.6",
     "@react-three/fiber": "^8.15.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

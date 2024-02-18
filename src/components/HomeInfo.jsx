@@ -15,30 +15,23 @@ const InfoBox = ({ text, link, btnText }) => (
 const renderContent = {
     1: (
         <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
-            Bonejaw, I'm <span className="font-semibold"> Cindy </span> 👋
+            Bonejaw, I'm <span className="font-semibold"> Boolingo </span> 👋
             <br/>
-            It's 2:43am I want sleep or death.
+            I promise your learning is growing...in good claws and nests.
         </h1>
     ),
     2: (
         <InfoBox 
-            text="looking for star, looking for love, looking for star, looking for love"
+            text="Learn more about Boolingo!🦉🦉🦉"
             link="/about"
             btnText="Learn more"
         />
     ),
     3: (
         <InfoBox 
-            text="eight makes one team, annyeonghello ateez ibnida"
-            link="/projects"
-            btnText="Visit my portfolio"
-        />    
-    ),
-    4: (
-        <InfoBox 
-            text="hongjoong seonghwa yunho yeosang sani mingi wooyoung jongho"
-            link="/contact"
-            btnText="Let's talk"
+            text="Watch our demo video! 🎥🎥🎥🎥"
+            link="https://vimeo.com/914102102?share=copy#t=0"
+            btnText="Watch Here"
         />    
     ),
 }

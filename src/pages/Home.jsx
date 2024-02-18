@@ -2,45 +2,30 @@ import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useState, useEffect, useRef, Suspense } from 'react';
 import Loader from '../components/Loader';
-import Island from '../models/Island';
 import Sky from '../models/Sky';
-import Bird from '../models/Bird';
-import Plane from '../models/Plane';
 import HomeInfo from '../components/HomeInfo';
+import Duo1 from '../models/Duo1';
+import Knife from '../models/Knife';
+
 
 const Home = () => {
     const [isRotating, setIsRotating] = useState(false);
     const [currentStage, setCurrentStage] = useState(1);
     
-    const adjustIslandForScreenSize = () => {
+    const adjustDuoForScreenSize = () => {
         let screenScale = null;
-        let screenPosition = [0, -6.5, -43.4];
-        let islandRotation = [0.1, 4.7, 0];
+        let screenPosition = [-10, -5, -18.0];
+        let duoRotation = [0.1, 4.7, 0];
 
         if (window.innerWidth < 768) {
             screenScale = [0.9, 0.9, 0.9];
         } else {
             screenScale = [1, 1, 1];
         }
-        return [screenScale, screenPosition, islandRotation];
+        return [screenScale, screenPosition, duoRotation];
     };
 
-    const adjustPlaneForScreenSize = () => {
-        let screenScale = null;
-        let screenPosition = null;
-
-        if (window.innerWidth < 768) {
-            screenScale = [1.5, 1.5, 1.5];
-            screenPosition = [0, -1.5, 0];
-        } else {
-            screenScale = [3, 3, 3];
-            screenPosition = [0, -4, -4];
-        }
-        return [screenScale, screenPosition];
-    };
-
-    const [planeScale, planePosition] = adjustPlaneForScreenSize();
-    const [islandScale, islandPosition, islandRotation] = adjustIslandForScreenSize();
+    const [duoScale, duoPosition, duoRotation] = adjustDuoForScreenSize();
 
     return (
     <section className="w-full h-screen relative">
@@ -56,25 +41,22 @@ const Home = () => {
                 <ambientLight intensity={0.5}/>
                 <hemisphereLight skyColor="#b121ff" groundColor="#000000" intensity={1}/>
                 
-                <Bird />
-                <Sky 
-                    isRotating={isRotating}
-                />
-                <Island 
-                    position={islandPosition}
-                    scale={islandScale}
-                    rotation={islandRotation}
+                <Knife 
+                    scale={duoScale}
+                    rotation={duoRotation}
                     isRotating={isRotating}
                     setIsRotating={setIsRotating}
                     setCurrentStage={setCurrentStage}
+                    position={duoPosition}
                 />
-                <Plane 
-                    position={planePosition}
-                    scale={planeScale}
-                    rotation={[0,20.1,0]}
+                <Duo1 
                     isRotating={isRotating}
-                    setIsRotating={setIsRotating}
+                    
                 />
+                <Sky 
+                    isRotating={isRotating}
+                />
+
             </Suspense>
         </Canvas>
     </section>
